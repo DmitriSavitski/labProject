@@ -1,0 +1,46 @@
+﻿@using BLL.Models;
+@model IEnumerable<EmployeesDto>
+
+@{ ViewBag.Title = "Управление сотрудниками предприятия"; }
+
+<h2 style="text-align:center">@ViewBag.Title</h2>
+
+<span>
+	<a class='btn btn-info btn-md' style="margin-left:15px" href='@Url.Action("Create","Employee")'>Добавить сотрудника</a>
+</span>
+<hr />
+<table class="table table-striped" id="userList">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Email</th>
+			<th>ФИО пользователя</th>
+			<th>Отдел</th>
+			<th>Должность</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model.FirstOrDefault() != null)
+		{
+			foreach (var item in Model)
+			{
+				<tr>
+					<td>@item.EmployeeIdDto</td>
+					<td>@item.EmailDto</td>
+					<td>@item.FIODto.LastName @item.FIODto.FirstName @item.FIODto.MiddleName </td>
+					<td>@item.DepartmentDto.Name</td>
+					<td>@item.PositionDto.Name</td>
+					<td>
+						<span>
+							<a class='btn btn-success' href='@Url.Action("Update", "Employee", new { id = item.EmployeeIdDto })'>Редактировать</a>
+						</span>
+						<span style='padding-left: 5px'>
+							<a class='btn btn-danger' href='@Url.Action("Delete", "Employee", new { id = item.EmployeeIdDto })'>Удалить</a>
+						</span>
+					</td>
+				</tr>
+			}
+		}
+	</tbody>
+</table>

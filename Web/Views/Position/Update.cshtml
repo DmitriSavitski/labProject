@@ -1,0 +1,29 @@
+﻿@using BLL.Models;
+
+@model PositionDto;
+
+
+@using (Html.BeginForm("Update", "Position", FormMethod.Post))
+{
+	<div class="modal-content">
+		<div class="modal-header" style="align-self:center; border-bottom:none">
+			<h4 class="modal-title">Изменить данные о должности</h4>
+		</div>
+		<div class="modal-body">
+			@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+			@Html.HiddenFor(u => u.PositionIdDto)
+			<fieldset class="form-group">
+				<label for="NameDto">Наименование должности</label>
+				@Html.TextBoxFor(u => u.NameDto, new { @class = "form-control", @value = Model.NameDto })
+			</fieldset>
+		</div>
+		<div class="modal-footer" style="border:none">
+			<button type="submit" class="btn btn-primary pull-left">Сохранить</button>
+
+			<span style='padding-left: 5px'>
+				<a class='btn btn-danger' href='@Url.Action("Index", "Position")'>Назад</a>
+			</span>
+		</div>
+
+	</div>
+}

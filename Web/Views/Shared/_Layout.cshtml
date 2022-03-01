@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-light navbar-expand-lg" style="background-color: #465765; height: 5%">
+			<div class="container" style="width: 100%; max-width: 100%">
+				<div class="navbar-collapse collapse" style="width:100%">
+
+					@Html.Partial("_LoginPartial")
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="container" style="width:100%; padding: 0; max-width:100%">
+		@RenderBody()
+
+	</div>
+
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="~/lib/jquery/dist/jquery.js"></script>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

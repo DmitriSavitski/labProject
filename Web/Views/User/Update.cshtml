@@ -1,0 +1,45 @@
+﻿@using BLL.Models;
+
+@model UsersDto;
+
+
+@using (Html.BeginForm("Update", "User", FormMethod.Post))
+{
+	<div class="modal-content">
+		<div class="modal-header" style="align-self:center; border-bottom:none">
+			<h4 class="modal-title">Изменить данные пользователя</h4>
+		</div>
+		<div class="modal-body">
+			@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+			@Html.HiddenFor(u => u.UserIdDto)
+			<fieldset class="form-group">
+				<label for="EmailDto">Email</label>
+				@Html.TextBoxFor(u => u.EmailDto, new { @class = "form-control", @value = Model.EmailDto })
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="EmailPasswordDto">Email</label>
+				@Html.TextBoxFor(u => u.EmailPasswordDto, new { @class = "form-control" })
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="LoginDto">Имя пользователя</label>
+				@Html.TextBoxFor(u => u.LoginDto, new { @class = "form-control", @value = Model.LoginDto })
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="PasswordDto">Пароль</label>
+				@Html.TextBoxFor(u => u.PasswordDto, new { @class = "form-control", @value = Model.PasswordDto })
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="RoleDto">Роль</label>
+				@Html.DropDownListFor(u => u.RoleDto.RoleId, new SelectList(ViewBag.Roles, "RoleIdDto", "NameDto"), new { @class = "form-control" })
+			</fieldset>
+		</div>
+		<div class="modal-footer" style="border:none">
+			<button type="submit" class="btn btn-primary pull-left">Сохранить</button>
+
+			<span style='padding-left: 5px'>
+				<a class='btn btn-danger' href='@Url.Action("Index", "User")'>Назад</a>
+			</span>
+		</div>
+
+	</div>
+}

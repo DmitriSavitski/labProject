@@ -1,0 +1,67 @@
+﻿@model Web.Models.UserAuthViewModel
+
+@{ ViewBag.Title = "Вход"; }
+
+<script>
+	function sendInfo() {
+		if ($('#error').text.length)
+			$('#error').remove();
+
+		var login = $('#Login').val();
+		var password = $('#Password').val();
+		var model = { Login: login, Password: password };
+		var url = 'https://localhost:5001/Authorization/SignIn';
+
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: model,
+			dataType: 'json',
+			success: function (result) {
+				debugger;
+				if (result.redirectUrl == null) {
+					$('#Login').parent().append('<span id="error" style="color: red">Ошибка входа! Проверьте имя пользователя и пароль</span>')
+					$('#Login').val(result.login);
+				}
+				else {
+					window.location.replace(result.redirectUrl);
+				}
+			}
+		})
+	}
+</script>
+
+<h2 style=" text-align:center">@ViewBag.Title</h2>
+<div class="row">
+	<div class="col-md-8">
+		<section id="loginForm">
+@Html.AntiForgeryToken()
+				@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+								<div class="form-group">
+									<label for="Login">Имя пользователя</label>
+									<div class="col-md-10">
+										@Html.TextBoxFor(m => m.Login, new { @class = "form-control" })
+										@Html.ValidationMessageFor(m => m.Login, "", new { @class = "text-danger" })
+									</div>
+								</div>
+												<div class="form-group">
+													<label for="Password">Пароль</label>
+													<div class="col-md-10">
+														@Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+														@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+													</div>
+												</div>
+																<div class="form-group">
+																	<div class="col-md-offset-2 col-md-10">
+																		<input  value="Вход" class="btn btn-success" onclick="sendInfo()" />
+																	</div>
+																</div>
+	</div>
+	<div class="col-md-4">
+		<section id="socialLoginForm"></section>
+	</div>
+</div>
+
+@section Scripts {
+	@*@Scripts.Render("~/bundles/jqueryval")*@
+}

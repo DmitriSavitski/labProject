@@ -1,0 +1,85 @@
+﻿
+@if (this.Context.User.Identity.IsAuthenticated)
+{
+	@using (Html.BeginForm("LogOff", "Authorization", FormMethod.Post, new { id = "logoutForm", style = "width:100%" }))
+	{
+
+		@Html.AntiForgeryToken()
+		if (this.Context.User.IsInRole("Admin"))
+		{
+			<ul class="nav navbar-nav" style="float:inherit; position:relative;display:inline-block; width:100%">
+				<li style="margin-top: 6px; display: inline-flex; margin-right: 15px;">
+					<a style="color: honeydew !important" href="@Url.Action("Index", "Informing")">Уведомить сотрудника(ов)</a>
+				</li>
+				<li style="margin-top: 6px; display: inline-flex; margin-right: 15px ">
+					<a style="color: honeydew !important" class="dropdown" href="@Url.Action("Index", "User")">Работа с пользователями</a>
+				</li>
+				<li style="margin-top: 6px; display: inline-flex; margin-right: 15px; ">
+					<a style="color: honeydew !important" class="dropdown" href="@Url.Action("Index", "Employee")">Работа с сотрудниками</a>
+				</li>
+				<li style="margin-top: 6px; display: inline-flex; margin-right: 15px;">
+					<a style="color: honeydew !important" class="dropdown" href="@Url.Action("Index", "Department")">Работа с отделами</a>
+				</li>
+				<li style="margin-top: 6px; display:inline-flex ">
+					<a style="color: honeydew !important" class="dropdown" href="@Url.Action("Index", "Position")">Работа с должностями</a>
+				</li>
+				<li style="padding-right: 50px; float:right">
+					<div id="nav" class="btn btn-primary" style=" background-color: darkred; float: right; margin-top: 5px; height: 41px; border-radius: 20px;">
+						<span class="navbar-text" style="display: contents;">
+							<a class="btn" role="button" style="color: honeydew !important; display:initial" href="javascript:document.getElementById('logoutForm').submit()">Выход</a>
+						</span>
+					</div>
+				</li>
+			</ul> }
+		else if (this.Context.User.IsInRole("Менеджер") || this.Context.User.IsInRole("Руководитель предприятия"))
+		{
+<ul class="nav navbar-nav" style="float:inherit; position:relative;display:inline-block; width:100%">
+	<li style="margin-top: 6px; display: inline-flex; margin-right: 15px;">
+		<a style="color: honeydew !important" href="@Url.Action("Index", "Informing")">Уведомить сотрудника(ов)</a>
+	</li>
+	<li style="margin-top: 6px; display: inline-flex; margin-right: 15px ">
+		<a style="color: honeydew !important" class="dropdown" href="@Url.Action("Index", "User")">Работа с пользователями</a>
+	</li>
+	<li style="margin-top: 6px; display: inline-flex; margin-right: 15px; ">
+		<a style="color: honeydew !important" class="dropdown" href="@Url.Action("Index", "Employee")">Работа с сотрудниками</a>
+	</li>
+	<li style="margin-top: 6px; display: inline-flex; margin-right: 15px; ">
+		<a style="color: honeydew !important" class="dropdown" href="@Url.Action("Index", "Department")">Работа с отделами</a>
+	</li>
+	<li style="margin-top: 6px; display:inline-flex ">
+		<a style="color: honeydew !important" class="dropdown" href="@Url.Action("Index", "Position")">Работа с должностями</a>
+	</li>
+	<li style="padding-right: 50px; float:right">
+		<div id="nav" class="btn btn-primary" style=" background-color: darkred; float: right; margin-top: 5px; height: 41px; border-radius: 20px;">
+			<span class="navbar-text" style="display: contents;">
+				<a class="btn" role="button" style="color: honeydew !important; display:initial" href="javascript:document.getElementById('logoutForm').submit()">Выход</a>
+			</span>
+		</div>
+	</li>
+</ul>
+		}
+		else
+		{
+			<ul class="nav navbar-nav" style="float:inherit">
+				<li style="margin-top: 6px; display: inline-flex; margin-right: 15px;">
+					<a style="color: honeydew !important" href="@Url.Action("Index", "Informing")">Уведомить сотрудника(ов)</a>
+				</li>
+				<li style="margin-top: 6px; display: inline-flex; margin-right: 15px; ">
+					<a style="color: honeydew !important" class="dropdown" href="@Url.Action("Index", "Employee")">Работа с сотрудниками</a>
+				</li>
+				<li style="padding-right: 50px; float:right">
+					<div id="nav" class="btn btn-primary" style=" background-color: darkred; float: right; margin-top: 5px; height: 41px; border-radius: 20px;">
+						<span class="navbar-text" style="display: contents;">
+							<a style="color: honeydew !important" class="btn" role="button" href="javascript:document.getElementById('logoutForm').submit()">Выход</a>
+						</span>
+					</div>
+				</li>
+			</ul>}
+	}
+
+}
+else
+{
+	<div class="navbar navbar-light navbar-expand-lg">
+	</div>
+}

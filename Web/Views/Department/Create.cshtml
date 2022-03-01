@@ -1,0 +1,28 @@
+﻿@using BLL.Models;
+
+@model DepartmentsDto;
+
+
+@using (Html.BeginForm("Create", "Department", FormMethod.Post))
+{
+	<div class="modal-content">
+		<div class="modal-header" style="align-self: center; border-bottom:none">
+			<h4 class="modal-title">Добавить отдел</h4>
+		</div>
+		<div class="modal-body">
+			@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+			<fieldset class="form-group">
+				<label for="NameDto">Наименование</label>
+				@Html.TextBoxFor(u => u.NameDto, new { @class = "form-control" })
+			</fieldset>
+		</div>
+		<div class="modal-footer" style="border:none">
+			<button type="submit" class="btn btn-primary pull-left">Сохранить</button>
+
+			<span style='padding-left: 5px'>
+				<a class='btn btn-danger' href='@Url.Action("Index", "Department")'>Назад</a>
+			</span>
+		</div>
+
+	</div>
+}

@@ -1,0 +1,15 @@
+D:\study\7 сем\курсач\Kursach\BLL\bin\Debug\net5.0\BLL.deps.json
+D:\study\7 сем\курсач\Kursach\BLL\bin\Debug\net5.0\BLL.dll
+D:\study\7 сем\курсач\Kursach\BLL\bin\Debug\net5.0\ref\BLL.dll
+D:\study\7 сем\курсач\Kursach\BLL\bin\Debug\net5.0\BLL.pdb
+D:\study\7 сем\курсач\Kursach\BLL\bin\Debug\net5.0\DAL.dll
+D:\study\7 сем\курсач\Kursach\BLL\bin\Debug\net5.0\DAL.pdb
+D:\study\7 сем\курсач\Kursach\BLL\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+D:\study\7 сем\курсач\Kursach\BLL\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\7 сем\курсач\Kursach\BLL\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+D:\study\7 сем\курсач\Kursach\BLL\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+D:\study\7 сем\курсач\Kursach\BLL\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+D:\study\7 сем\курсач\Kursach\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
+D:\study\7 сем\курсач\Kursach\BLL\obj\Debug\net5.0\BLL.dll
+D:\study\7 сем\курсач\Kursach\BLL\obj\Debug\net5.0\ref\BLL.dll
+D:\study\7 сем\курсач\Kursach\BLL\obj\Debug\net5.0\BLL.pdb

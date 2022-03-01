@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DAL.Configurations.DepartmentsConfiguration" BaseTypeListCollapsed="true">
+    <Position X="1.5" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\DepartmentsConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.Configurations.EmployeesConfiguration" BaseTypeListCollapsed="true">
+    <Position X="4" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\EmployeesConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.19" />
+  </Class>
+  <Class Name="DAL.Configurations.FIOConfiguration" BaseTypeListCollapsed="true">
+    <Position X="7" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\FIOConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.Configurations.LeadersConfiguration" BaseTypeListCollapsed="true">
+    <Position X="7" Y="8.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\LeadersConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.408" />
+  </Class>
+  <Class Name="DAL.Configurations.NationalityConfiguration" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\NationalityConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.Configurations.PositionConfiguration" BaseTypeListCollapsed="true">
+    <Position X="1.75" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\PositionConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.Configurations.ProtocolConfigruration" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\ProtocolConfigruration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.221" />
+  </Class>
+  <Class Name="DAL.Configurations.RoleConfiguration" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\RoleConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.Configurations.StatusConfiguration" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\StatucConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.Configurations.UsersConfiguration" BaseTypeListCollapsed="true">
+    <Position X="11" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\UsersConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DAL.Context.ApplicationContext">
+    <Position X="6.25" Y="3.75" Width="2.75" />
+    <AssociationLine Name="EmployeesConfiguration" Type="DAL.Configurations.EmployeesConfiguration">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.112" Y="0.162" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="LeadersConfiguration" Type="DAL.Configurations.LeadersConfiguration" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.875" Y="7.358" />
+        <Point X="7.875" Y="8.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ProtocolConfigruration" Type="DAL.Configurations.ProtocolConfigruration" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9" Y="6.875" />
+        <Point X="9.375" Y="6.875" />
+        <Point X="9.375" Y="8.172" />
+        <Point X="9.75" Y="8.172" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.338" Y="0.31" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FIOConfiguration" Type="DAL.Configurations.FIOConfiguration">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.11" Y="0.294" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ggAAgCAEAAAgAAAgECgAABRgmAgAAABAAAIAAAAACAA=</HashCode>
+      <FileName>Context\ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UsersConfiguration" />
+      <Property Name="DepartmentsConfiguration" />
+      <Property Name="PositionConfiguration" />
+      <Property Name="EmployeesConfiguration" />
+      <Property Name="LeadersConfiguration" />
+      <Property Name="ProtocolConfigruration" />
+      <Property Name="RoleConfiguration" />
+      <Property Name="FIOConfiguration" />
+      <Property Name="StatusConfiguration" />
+      <Property Name="NationalityConfiguration" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Models.Departments">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAEQACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Departments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Employees">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAACCAA=</HashCode>
+      <FileName>Models\Employees.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.FIO">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAABAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\FIO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Leaders">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Leaders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Nationality">
+    <Position X="15.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQCAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Nationality.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Position">
+    <Position X="17" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Position.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Protocol">
+    <Position X="18.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEAAAAQAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Protocol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Role">
+    <Position X="20.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Status">
+    <Position X="15.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Models.Users">
+    <Position X="17" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAAAAAAEAAAAAhACAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Models\Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,33 @@
+﻿@using BLL.Models;
+
+@model DepartmentsDto;
+
+
+@using (Html.BeginForm("SetLeader", "Department", FormMethod.Post))
+{
+	<div class="modal-content">
+		<div class="modal-header" style="align-self: center; border-bottom:none">
+			<h4 class="modal-title">Назначить руководителя отдела</h4>
+		</div>
+		<div class="modal-body">
+			@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+			@Html.HiddenFor(c => c.DepartmentIdDto)
+			<fieldset class="form-group">
+				<label for="NameDto">Наименование отдела</label>
+				@Html.TextBoxFor(u => u.NameDto, new { @class = "form-control" })
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="LeadersId">Руководитель</label>
+				@Html.DropDownListFor(u => u.LeaderDto.LeadersId, new SelectList(ViewBag.Employees, "EmployeesId", "fio"), new { @class = "form-control" })
+			</fieldset>
+		</div>
+		<div class="modal-footer" style="border:none">
+			<button type="submit" class="btn btn-primary pull-left">Сохранить</button>
+
+			<span style='padding-left: 5px'>
+				<a class='btn btn-danger' href='@Url.Action("Index", "Department")'>Назад</a>
+			</span>
+		</div>
+
+	</div>
+}

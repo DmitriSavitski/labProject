@@ -1,0 +1,91 @@
+﻿@using BLL.Models;
+@model IEnumerable<DepartmentsDto>
+
+@{ ViewBag.Title = "Управление отделами предприятия"; }
+
+<h2 style="text-align:center">@ViewBag.Title</h2>
+
+<script>
+	function sendInfo() {
+		$('#').val();
+		$('#').val();
+		$('#').val();
+		$('#').val();
+
+		var model = {};
+		var url = 
+
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: model,
+			dataType: 'json',
+			success: function (result) {
+				debugger;
+				if (result.redirectUrl == null) {
+					$('#Login').parent().append('<span id="error" style="color: red">Ошибка входа! Проверьте имя пользователя и пароль</span>')
+					$('#Login').val(result.login);
+				}
+				else {
+					window.location.replace(result.redirectUrl);
+				}
+			}
+		});
+	}
+</script>
+
+<span>
+	<a class='btn btn-info btn-md' style="margin-left:15px" href='@Url.Action("Create","Department")'>Добавить отдел</a>
+</span>
+<hr />
+<table class="table table-striped" id="userList">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Наименование отдела</th>
+			@*<th>Руководитель</th>*@
+			<th>Сотрудники отдела</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model.FirstOrDefault() != null)
+		{
+			foreach (var item in Model)
+			{
+				<tr>
+					<td>@item.DepartmentIdDto</td>
+					<td>@item.NameDto</td>
+					@*<td>@item.LeaderDto.Employee.FIO.LastName + @item.LeaderDto.Employee.FIO.FirstName + @item.LeaderDto.Employee.FIO.MiddleName </td>*@
+					<td>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>ФИО сотрудника</th>
+									<th>Должность</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var employee in item.Employee)
+								{
+									<tr>
+										<td>@employee.FIODto.LastName @employee.FIODto.FirstName @employee.FIODto.MiddleName</td>
+										<td>@employee.PositionDto.Name</td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</td>
+					<td>
+						<span>
+							<a class='btn btn-success' href='@Url.Action("Update", "Department", new { id = item.DepartmentIdDto })'>Редактировать</a>
+						</span>
+						<span style='padding-left: 5px'>
+							<a class='btn btn-danger' href='@Url.Action("Delete", "Department", new { id = item.DepartmentIdDto, name = item.NameDto })'>Удалить</a>
+						</span>
+					</td>
+				</tr>
+				}
+		}
+	</tbody>
+</table>

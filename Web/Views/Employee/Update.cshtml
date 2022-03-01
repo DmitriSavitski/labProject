@@ -1,0 +1,50 @@
+﻿@using BLL.Models;
+
+@model EmployeesDto;
+
+
+@using (Html.BeginForm("Update", "Employee", FormMethod.Post))
+{
+	<div class="modal-content">
+		<div class="modal-header" style="align-self: center; border-bottom:none">
+			<h4 class="modal-title">Изменить данные пользователя</h4>
+		</div>
+		<div class="modal-body">
+			@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+			@Html.HiddenFor(c => c.EmployeeIdDto)
+			@Html.HiddenFor(c => c.FIODto.FIOId)
+			<fieldset class="form-group">
+				<label for="EmailDto">Email</label>
+				@Html.TextBoxFor(u => u.EmailDto, new { @class = "form-control" })
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="LoginDto">ФИО пользователя</label>
+				<div style="margin-left:15px">
+					<label for="LastName">Фамилия</label>
+					@Html.TextBoxFor(u => u.FIODto.LastName, new { @class = "form-control" })
+					<label for="FirstName">Имя</label>
+					@Html.TextBoxFor(u => u.FIODto.FirstName, new { @class = "form-control" })
+					<label for="MiddleName">Отчество</label>
+					@Html.TextBoxFor(u => u.FIODto.MiddleName, new { @class = "form-control" })
+
+				</div>
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="DepartmentsId">Отдел</label>
+				@Html.DropDownListFor(u => u.DepartmentDto.DepartmentsId, new SelectList(ViewBag.Departments, "DepartmentIdDto", "NameDto"), new { @class = "form-control" })
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="PositionId">Должность</label>
+				@Html.DropDownListFor(u => u.PositionDto.PositionId, new SelectList(ViewBag.Positions, "PositionIdDto", "NameDto"), new { @class = "form-control" })
+			</fieldset>
+		</div>
+		<div class="modal-footer" style="border:none">
+			<button type="submit" class="btn btn-primary pull-left">Сохранить</button>
+
+			<span style='padding-left: 5px'>
+				<a class='btn btn-danger' href='@Url.Action("Index", "Employee")'>Назад</a>
+			</span>
+		</div>
+
+	</div>
+}
